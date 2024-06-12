@@ -166,4 +166,11 @@ public class BooksController {
             @RequestParam(required = false) String author) {
         return booksService.searchBooks(name, author);
     }
+
+    @GetMapping("/get-book-by-name")
+    public List<BooksEntity> getBookByName(
+            @RequestParam(required = false) String name
+    ){
+        return  booksService.findBookByName(name);
+    }
 }

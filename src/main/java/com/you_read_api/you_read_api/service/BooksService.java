@@ -96,4 +96,8 @@ public class BooksService {
             return booksRepository.findAll();
         }
     }
+
+    public List<BooksEntity> findBookByName(String name) {
+        return booksRepository.findByName(name);
+    }
 }
