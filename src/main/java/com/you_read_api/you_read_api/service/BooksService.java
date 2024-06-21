@@ -100,4 +100,12 @@ public class BooksService {
     public List<BooksEntity> findBookByName(String name) {
         return booksRepository.findByName(name);
     }
+
+    public List<BooksEntity> findByName(String name) {
+        return booksRepository.findByNameIgnoreCaseAndSpaces(name);
+    }
+
+    public List<BooksEntity> findByAuthor(String author) {
+        return booksRepository.findByAuthorIgnoreCaseAndSpaces(author);
+    }
 }

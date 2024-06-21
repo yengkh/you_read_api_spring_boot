@@ -156,21 +156,27 @@ public class BooksController {
     }
 
     @GetMapping("/find-books-by-type/{type}")
-    public List<BooksEntity> getBooksByType(@PathVariable String type) {
+    public List<BooksEntity> getBooksByType(
+            @PathVariable String type
+    ) {
         return booksService.findByType(type);
     }
 
     @GetMapping("/search")
     public List<BooksEntity> searchBooks(
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String author) {
+            @RequestParam(required = false)
+            String name,
+            @RequestParam(required = false)
+            String author
+    ) {
         return booksService.searchBooks(name, author);
     }
 
     @GetMapping("/get-book-by-name")
     public List<BooksEntity> getBookByName(
-            @RequestParam(required = false) String name
+            @RequestParam(required = false)
+            String name
     ){
-        return  booksService.findBookByName(name);
+        return  booksService.findByName(name);
     }
 }
